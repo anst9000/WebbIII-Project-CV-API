@@ -6,6 +6,7 @@ CREATE TABLE webiii_jobs (
   end_date DATE NOT NULL,
   PRIMARY KEY (id)
 );
+
 INSERT INTO
   webiii_jobs (company, title, start_date, end_date)
 VALUES
@@ -38,4 +39,4 @@ VALUES
     'Datateknik',
     '2001-01-01',
     '2001-01-01'
-  )
+  );

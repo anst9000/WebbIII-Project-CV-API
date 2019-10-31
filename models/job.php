@@ -1,7 +1,6 @@
 <?php
 class Job
 {
-
     // database connection and table company
     private $conn;
     private $table = "webiii_jobs";

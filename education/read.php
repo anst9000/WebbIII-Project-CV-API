@@ -8,56 +8,56 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
 // include database and object files
-include __DIR__ . "/../../config/database.php";
-include __DIR__ . "/../../models/job.php";
+include __DIR__ . "/../config/database.php";
+include __DIR__ . "/../models/education.php";
 
-// include_once "../../config/database.php";
-// include_once "../../models/job.php";
+// include_once "../config/database.php";
+// include_once "../models/education.php";
 
-// instantiate database and job object
+// instantiate database and education object
 $database = new Database();
 $db = $database->connect();
 
 // initialize object
-$job = new Job($db);
+$education = new Education($db);
 
-// query jobs
-$stmt = $job->read();
+// query educations
+$stmt = $education->read();
 $num = $stmt->rowCount();
 
 // check if more than 0 record found
 if ($num > 0) {
-    // jobs array
-    $jobs_arr = array();
-    $jobs_arr["records"] = array();
+    // educations array
+    $educations_arr = array();
+    $educations_arr["records"] = array();
 
     // retrieve our table contents, fetch() is faster than fetchAll()
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        // extract row this will make $row['company'] to just $company only
+        // extract row this will make $row['school'] to just $school only
         extract($row);
 
-        $job_item = array(
+        $education_item = array(
             "id" => $id,
-            "company" => $company,
-            "title" => $title,
+            "school" => $school,
+            "course" => $course,
             "start_date" => $start_date,
             "end_date" => $end_date,
         );
 
-        array_push($jobs_arr["records"], $job_item);
+        array_push($educations_arr["records"], $education_item);
     }
 
     // set response code - 200 OK
     http_response_code(200);
 
-    // show jobs data in json format
-    echo json_encode($jobs_arr);
+    // show educations data in json format
+    echo json_encode($educations_arr);
 } else {
     // set response code - 404 Not found
     http_response_code(404);
 
-    // tell the user no jobs found
+    // tell the user no educations found
     echo json_encode(
-        array("message" => "No jobs found.")
+        array("message" => "No educations found.")
     );
 }

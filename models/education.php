@@ -1,7 +1,6 @@
 <?php
 class Education
 {
-
     // database connection and table name
     private $conn;
     private $table = "webiii_educations";
@@ -94,11 +93,11 @@ class Education
     {
         // Create query
         $query = 'UPDATE ' . $this->table . '
-                  SET school = :school,
+              SET school = :school,
                   course = :course,
                   start_date = :start_date,
                   end_date = :end_date
-                WHERE id = :id';
+              WHERE id = :id';
         // Prepare statement
         $stmt = $this->conn->prepare($query);
         // Clean data

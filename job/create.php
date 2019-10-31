@@ -10,11 +10,11 @@ header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
 // include database and object files
-include __DIR__ . "/../../config/database.php";
-include __DIR__ . "/../../models/job.php";
+include __DIR__ . "/../config/database.php";
+include __DIR__ . "/../models/job.php";
 
-// include_once "../../config/database.php";
-// include_once "../../models/job.php";
+// include_once "../config/database.php";
+// include_once "../models/job.php";
 
 // Instantiate DB & connect
 $database = new Database();

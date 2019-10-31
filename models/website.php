@@ -1,7 +1,6 @@
 <?php
 class Website
 {
-
     // database connection and table title
     private $conn;
     private $table = "webiii_websites";

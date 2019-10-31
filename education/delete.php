@@ -10,35 +10,35 @@ header('Access-Control-Allow-Methods: DELETE');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
 // include database and object files
-include __DIR__ . "/../../config/database.php";
-include __DIR__ . "/../../models/website.php";
+include __DIR__ . "/../config/database.php";
+include __DIR__ . "/../models/education.php";
 
-// include_once "../../config/database.php";
-// include_once "../../models/website.php";
+// include_once "../config/database.php";
+// include_once "../models/education.php";
 
 // Instantiate DB & connect
 $database = new Database();
 $db = $database->connect();
 
-// Instantiate blog website object
-$website = new Website($db);
+// Instantiate blog education object
+$education = new Education($db);
 
-// Get raw websiteed data
+// Get raw educationed data
 $data = json_decode(file_get_contents("php://input"));
-$website->id = $data->id;
+$education->id = $data->id;
 
-// $website->id = $_POST['id'];
+// $education->id = $_POST['id'];
 
-// Delete website
-if ($website->delete()) {
+// Delete education
+if ($education->delete()) {
     echo json_encode(
         array(
-            'message' => 'Website Deleted',
-            'value' => $website->id,
+            'message' => 'Education Deleted',
+            'value' => $education->id,
         )
     );
 } else {
     echo json_encode(
-        array('message' => 'Website Not Deleted')
+        array('message' => 'Education Not Deleted')
     );
 }

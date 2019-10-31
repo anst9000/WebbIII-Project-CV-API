@@ -8,11 +8,11 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
 // include database and object files
-include __DIR__ . "/../../config/database.php";
-include __DIR__ . "/../../models/education.php";
+include __DIR__ . "/../config/database.php";
+include __DIR__ . "/../models/education.php";
 
-// include_once "../../config/database.php";
-// include_once "../../models/education.php";
+// include_once "../config/database.php";
+// include_once "../models/education.php";
 
 // Instantiate DB & connect
 $database = new Database();
