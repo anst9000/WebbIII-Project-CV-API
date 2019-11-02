@@ -5,13 +5,13 @@
 > This is the REST API which both WebbIII-Project-CV-Admin and WebbIII-Project-CV-Application is getting data from. This REST API has full CRUD functionality, which means that it is possible to Create, Read, Update and Delete posts in this API.
 
 ## Site
-> The Internet address to the API is  [https://www.anst9000.xyz/api](https://www.anst9000.xyz/api) after that you will have to specify what type of information you want to see.
+> The Internet address to the API is  [https://anst9000.xyz/api](https://anst9000.xyz/api) after that you will have to specify what type of information you want to see.
 - /education
 - /job
 - /website
 
 ## Usage
-> Say for example that you are interrested in getting all education posts from the API, then you can either via the browser or the software **Postman** type https://www.anst9000.xyz/api/education/read.php and you will receive a JSON-object with a list of records.
+> Say for example that you are interrested in getting all education posts from the API, then you can either via the browser or the software **Postman** type https://anst9000.xyz/api/education/read.php and you will receive a JSON-object with a list of records.
 ```json
 {
   "records": [
